@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Adivinhação</title>
+
+    <style>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+input {
+    padding: 8px;
+    margin: 10px;
+    font-size: 16px;
+    width: 200px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer button {
+    background-color: #007BFF;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+}
+
+footer button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+
+    </style>
+    
+</head>
+<body>
+    <header>
+        <h1>Jogo de Adivinhação</h1>
+    </header>
+
+    <main>
+        <label for="palpite">Escolha um número entre 1 e 10:</label>
+        <input type="number" id="palpite" min="1" max="10" placeholder="Digite seu palpite" required>
+        <button onclick="verificarPalpite()">Verificar</button>
+
+        <p id="resultado"></p>
+    </main>
+
+
+    <script>
+        function verificarPalpite() {
+            // Obtém o palpite do usuário
+            var palpiteUsuario = parseInt(document.getElementById("palpite").value);
+
+            // Gera um número aleatório entre 1 e 10
+            var numeroAleatorio = Math.floor(Math.random() * 10) + 1;
+
+            // Verifica se o palpite do usuário é igual ao número sorteado
+            var resultado = "";
+            if (palpiteUsuario === numeroAleatorio) {
+                resultado = "Parabéns, você acertou!";
+            } else {
+                resultado = "Tente novamente! O número sorteado foi " + numeroAleatorio + ".";
+            }
+
+            // Exibe o resultado na página
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+</body>
+<style>
+    body {
+      background-image: url('wallpaper-bliss-landscape-windows-xp-stock-4k-nature-nhvtxpop808oaye4.webp');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+    </style>
+
+</html>

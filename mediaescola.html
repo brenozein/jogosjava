@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média Escolar</title>
+
+    <img src="" alt="">
+   <style>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+input {
+    padding: 8px;
+    margin: 10px;
+    font-size: 16px;
+    width: 200px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer button {
+    background-color: #007BFF;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+}
+
+footer button:hover {
+    background-color: #0056b3;
+}
+
+
+   </style>
+</head>
+<body>
+    <header>
+        <h1>Calculadora de Média Escolar</h1>
+    </header>
+
+    <main>
+        <form id="form-media">
+            <label for="prova1">Nota da Prova 1:</label>
+            <input type="number" id="prova1" step="0.1" placeholder="Digite a nota da prova 1" required>
+
+            <label for="prova2">Nota da Prova 2:</label>
+            <input type="number" id="prova2" step="0.1" placeholder="Digite a nota da prova 2" required>
+
+            <label for="prova3">Nota da Prova 3:</label>
+            <input type="number" id="prova3" step="0.1" placeholder="Digite a nota da prova 3" required>
+
+            <label for="prova4">Nota da Prova 4:</label>
+            <input type="number" id="prova4" step="0.1" placeholder="Digite a nota da prova 4" required>
+
+            <button type="button" onclick="calcularMedia()">Calcular Média</button>
+        </form>
+
+        <p id="resultado"></p>
+    </main>
+
+
+    <script>
+        function calcularMedia() {
+          
+            var prova1 = parseFloat(document.getElementById("prova1").value);
+            var prova2 = parseFloat(document.getElementById("prova2").value);
+            var prova3 = parseFloat(document.getElementById("prova3").value);
+            var prova4 = parseFloat(document.getElementById("prova4").value);
+
+           
+            var media = (prova1 + prova2 + prova3 + prova4) / 4;
+
+         
+            var resultado = "";
+            if (media >= 7) {
+                resultado = "Aprovado!";
+            } else if (media >= 5) {
+                resultado = "Recuperação";
+            } else {
+                resultado = "Reprovado";
+            }
+
+        
+            document.getElementById("resultado").innerHTML = "Média: " + media.toFixed(2) + "<br>" + resultado;
+        }
+    </script>
+</body>
+<style>
+    body {
+      background-image: url('wallpaper-bliss-landscape-windows-xp-stock-4k-nature-nhvtxpop808oaye4.webp');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+    </style>
+
+</html>

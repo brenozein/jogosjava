@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saudação de Acordo com a Hora</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer p {
+    font-size: 14px;
+    color: #777;
+}
+
+footer button {
+    background-color: #007BFF;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+}
+
+footer button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+</style>
+
+    <header>
+        <h1>Saudação de Acordo com a Hora</h1>
+    </header>
+
+    <main>
+        <p id="saudacao"></p>
+
+    </main>
+
+    <script>
+        function exibirSaudacao() {
+            // Obtém a hora atual
+            var horaAtual = new Date().getHours();
+            var saudacao = "";
+
+            // Verifica a hora e define a saudação apropriada
+            if (horaAtual >= 6 && horaAtual < 12) {
+                saudacao = "Bom dia!";
+            } else if (horaAtual >= 12 && horaAtual < 18) {
+                saudacao = "Boa tarde!";
+            } else {
+                saudacao = "Boa noite!";
+            }
+
+            // Exibe a saudação no elemento com id="saudacao"
+            document.getElementById("saudacao").innerHTML = saudacao;
+        }
+
+        // Chama a função ao carregar a página
+        window.onload = exibirSaudacao;
+    </script>
+</body>
+
+
+</html>
